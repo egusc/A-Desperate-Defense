@@ -28,6 +28,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5286921111317877872, guid: 59ac87809f1370d4a896deee937b4e81, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7913583192512129521, guid: 59ac87809f1370d4a896deee937b4e81, type: 3}
       propertyPath: m_Name
       value: Tile_Road_Straight Variant_90
