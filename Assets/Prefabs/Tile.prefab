@@ -315,6 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlaceable: 1
+  turret: {fileID: 2989780361862686631, guid: de073c3321fd2864d8e799aab9e5e1d1, type: 3}
 --- !u!65 &-4096484639347253490
 BoxCollider:
   m_ObjectHideFlags: 0
