@@ -47,7 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 9169825516966661915}
-  target: {fileID: 1324026970289251597, guid: 8c2ebc88656b2f54fb5eb6bd4bdfe6c5, type: 3}
+  range: 15
+  projectileParticles: {fileID: 7832933314044055714}
 --- !u!1 &6143754862737723676
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,7 +919,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 10
       maxCurve:
         serializedVersion: 2
