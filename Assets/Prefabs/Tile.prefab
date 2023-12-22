@@ -184,6 +184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0fd9acfd741ae64ebfb8f69967e2e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  blockColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &5492275714634181417
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlaceable: 1
-  turret: {fileID: 2989780361862686631, guid: de073c3321fd2864d8e799aab9e5e1d1, type: 3}
+  turret: {fileID: 300017771245076929, guid: de073c3321fd2864d8e799aab9e5e1d1, type: 3}
 --- !u!65 &-4096484639347253490
 BoxCollider:
   m_ObjectHideFlags: 0
