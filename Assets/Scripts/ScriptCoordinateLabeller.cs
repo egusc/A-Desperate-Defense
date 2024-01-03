@@ -5,6 +5,7 @@ using TMPro;
 using System;
 
 [ExecuteAlways]
+[RequireComponent(typeof(TextMeshPro))]
 public class ScriptCoordinateLabeller : MonoBehaviour
 {
     [SerializeField] Color defaultColor = Color.white;
@@ -32,11 +33,11 @@ public class ScriptCoordinateLabeller : MonoBehaviour
             UpdateObjectName();
         }
 
-        ColorCoordinates();
+        SetLabelColor();
         ToggleLabels();
     }
 
-    void ColorCoordinates()
+    void SetLabelColor()
     {
         if(waypoint.IsPlaceable)
         {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Enemy))]
 public class EnemyMover : MonoBehaviour
 {
     [SerializeField] List<Waypoint> path =  new List<Waypoint>();
@@ -23,11 +24,17 @@ public class EnemyMover : MonoBehaviour
     {
         path.Clear();
 
-        GameObject[] waypoints = GameObject.FindGameObjectsWithTag("Path");
+        //Parent object containing paths
+        GameObject parent = GameObject.FindGameObjectWithTag("Path");
 
-        foreach(GameObject waypoint in waypoints)
+        //Iterate through paths
+        foreach(Transform child in parent.transform)
         {
-            path.Add(waypoint.GetComponent<Waypoint>());
+            Waypoint waypoint = child.GetComponent<Waypoint>();
+            if(waypoint)
+            {
+                path.Add(waypoint);
+            }
         }
     }
 
@@ -38,20 +45,25 @@ public class EnemyMover : MonoBehaviour
 
     IEnumerator FollowPath()
     {
-        foreach(Waypoint waypoint in path)
+        foreach (Waypoint waypoint in path)
         {
             Vector3 startPosition = transform.position;
-            Vector3 endPosition = new Vector3(waypoint.transform.position.x,transform.position.y, waypoint.transform.position.z);
+            Vector3 endPosition = new Vector3(waypoint.transform.position.x, transform.position.y, waypoint.transform.position.z);
             float travelPercent = 0f;       //Percentage of distance the enemy has travelled at a certain point
             transform.LookAt(endPosition);
-            while(travelPercent < 1f)
+            while (travelPercent < 1f)
             {
                 transform.position = Vector3.Lerp(startPosition, endPosition, travelPercent);
                 travelPercent += Time.deltaTime * moveSpeed;
                 yield return new WaitForEndOfFrame();
             }
-            
+
         }
+        FinishPath();
+    }
+
+    private void FinishPath()
+    {
         gameObject.SetActive(false);
         enemy.DeductGold();
     }
