@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3415919786257721017
+--- !u!1001 &1204091696661532006
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2111740239563371021, guid: 2d299b05d80fbe846a87ead4e4efafa5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2111740239563371021, guid: 2d299b05d80fbe846a87ead4e4efafa5, type: 3}
       propertyPath: m_LocalRotation.x
@@ -18,15 +18,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2111740239563371021, guid: 2d299b05d80fbe846a87ead4e4efafa5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2111740239563371021, guid: 2d299b05d80fbe846a87ead4e4efafa5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2111740239563371021, guid: 2d299b05d80fbe846a87ead4e4efafa5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 7430005909064543297, guid: 2d299b05d80fbe846a87ead4e4efafa5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -70,9 +70,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8923066228506684716, guid: 2d299b05d80fbe846a87ead4e4efafa5, type: 3}
       propertyPath: m_Name
-      value: Tile_Road_Corner Variant_180
+      value: Tile_Road_Corner Variant_270
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7874908535025206345, guid: 2d299b05d80fbe846a87ead4e4efafa5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
