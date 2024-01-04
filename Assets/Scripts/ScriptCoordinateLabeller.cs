@@ -10,14 +10,19 @@ public class ScriptCoordinateLabeller : MonoBehaviour
 {
     [SerializeField] Color defaultColor = Color.white;
     [SerializeField] Color blockColor = Color.grey;
+    [SerializeField] Color exploredColor = Color.yellow;
+    [SerializeField] Color pathColor = new Color(1f,0f,0.5f);
+
 
     TextMeshPro label;
     Vector2Int coordinate = new Vector2Int();
-    Waypoint waypoint;
+    GridManager gridManager;
+
 
     private void Awake() {
+        gridManager = FindObjectOfType<GridManager>();
+
         label = GetComponent<TextMeshPro>();    
-        waypoint = GetComponentInParent<Waypoint>();
         DisplayCurrentCoordinates();
         UpdateObjectName();
         label.enabled = false;
@@ -39,13 +44,27 @@ public class ScriptCoordinateLabeller : MonoBehaviour
 
     void SetLabelColor()
     {
-        if(waypoint.IsPlaceable)
-        {
-            label.color = defaultColor;
-        }
-        else
+        if(gridManager == null) {return;}
+
+        Node node = gridManager.GetNode(coordinate);
+
+        if(node == null) {return;}
+
+        if(!node.isWalkable)
         {
             label.color = blockColor;
+        }
+
+        else if (node.isPath)
+        {
+            label.color = pathColor;
+        }
+        else if(node.isExplored)
+        {
+            label.color = exploredColor;
+        }
+        else{
+            label.color = defaultColor;
         }
     }
 
