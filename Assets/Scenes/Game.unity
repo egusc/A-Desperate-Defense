@@ -703,7 +703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startCoordinates: {x: 0, y: 0}
-  destinationCoordinates: {x: 6, y: 4}
+  destinationCoordinates: {x: 4, y: 3}
 --- !u!1001 &90356216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1043,6 +1043,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1397976008}
     m_Modifications:
+    - target: {fileID: 685390557414499214, guid: 3449e0e3a217ed549af8a0eeaa6a594c, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2481138577072880512, guid: 3449e0e3a217ed549af8a0eeaa6a594c, type: 3}
       propertyPath: m_text
       value: (3,5)

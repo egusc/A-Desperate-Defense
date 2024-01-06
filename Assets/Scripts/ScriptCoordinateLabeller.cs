@@ -70,8 +70,9 @@ public class ScriptCoordinateLabeller : MonoBehaviour
 
     void DisplayCurrentCoordinates()
     {
-        coordinate.x = Mathf.RoundToInt(transform.parent.position.x / UnityEditor.EditorSnapSettings.move.x);
-        coordinate.y = Mathf.RoundToInt(transform.parent.position.z / UnityEditor.EditorSnapSettings.move.z);
+        if(gridManager == null) {return;}
+        coordinate.x = Mathf.RoundToInt(transform.parent.position.x / gridManager.UnityGridSize);
+        coordinate.y = Mathf.RoundToInt(transform.parent.position.z / gridManager.UnityGridSize);
         label.text = String.Format("({0},{1})", coordinate.x, coordinate.y);
     }
 
