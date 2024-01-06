@@ -26,6 +26,11 @@ public class Tile : MonoBehaviour
         {
             coordinates = gridManager.GetCoordinatesFromPosition(transform.position);
             
+            if(coordinates == pathfinder.StartCoordinates || coordinates == pathfinder.DestinationCoordinates)
+            {
+                isPlaceable = false;
+            }
+
             if(!isPlaceable)
             {
                 gridManager.BlockNode(coordinates);
@@ -36,13 +41,12 @@ public class Tile : MonoBehaviour
     private void OnMouseDown() {
         if(gridManager.GetNode(coordinates).isWalkable && !pathfinder.WillBlockPath(coordinates))
         {
-            bool isPlaced = turret.CreateTower(turret, transform.position);
-            Debug.Log(isPlaced);
-            isPlaceable = !isPlaced;
+            bool isSuccessful = turret.CreateTower(turret, transform.position);
             
-            if(!isPlaceable)
+            if(isSuccessful)
             {
                 gridManager.BlockNode(coordinates);
+                pathfinder.NotifyReceivers();
             }
             
         }   

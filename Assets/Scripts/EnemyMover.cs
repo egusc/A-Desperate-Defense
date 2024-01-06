@@ -11,6 +11,11 @@ public class EnemyMover : MonoBehaviour
     GridManager gridManager;
     Pathfinder pathfinder;
 
+    private void OnEnable() {
+        ReturnToStart();
+        RecalculatePath(true);
+    }
+
     void Awake()
     {
         enemy = GetComponent<Enemy>();
@@ -18,16 +23,24 @@ public class EnemyMover : MonoBehaviour
         pathfinder = FindObjectOfType<Pathfinder>();
     }
 
-    private void OnEnable() {
-        FindPath();
-        ReturnToStart();
-        StartCoroutine(FollowPath());
-    }
 
-    void FindPath()
+
+    void RecalculatePath(bool resetPath)
     {
+        Vector2Int coordinates = new Vector2Int();
+
+        if(resetPath)
+        {
+            coordinates = pathfinder.StartCoordinates;
+        }
+        else
+        {
+            coordinates = gridManager.GetCoordinatesFromPosition(transform.position);
+        }
+        StopAllCoroutines();
         path.Clear();
-        path = pathfinder.GetNewPath();
+        path = pathfinder.GetNewPath(coordinates);
+        StartCoroutine(FollowPath());
     }
 
     void ReturnToStart()
