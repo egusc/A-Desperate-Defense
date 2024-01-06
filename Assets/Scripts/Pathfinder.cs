@@ -7,6 +7,10 @@ public class Pathfinder : MonoBehaviour
     [SerializeField] Vector2Int startCoordinates;
     [SerializeField] Vector2Int destinationCoordinates;
 
+    public Vector2Int StartCoordinates { get { return startCoordinates; } }
+    public Vector2Int DestinationCoordinates { get { return destinationCoordinates; } }
+
+
     Node startNode;
     Node destinationNode;
     Node currentSearchNode;
@@ -24,18 +28,18 @@ public class Pathfinder : MonoBehaviour
         if(gridManager != null)
         {
             grid = gridManager.Grid;
+            startNode = grid[startCoordinates];
+            destinationNode = grid[destinationCoordinates];
         }
     }
     
     // Start is called before the first frame update
     void Start()
     {
-        startNode = gridManager.Grid[startCoordinates];
-        destinationNode = gridManager.Grid[destinationCoordinates];
         GetNewPath();
     }
 
-    private List<Node> GetNewPath()
+    public List<Node> GetNewPath()
     {
         gridManager.ResetNodes();
         BreadthFirstSearch();
@@ -68,6 +72,9 @@ public class Pathfinder : MonoBehaviour
 
     void BreadthFirstSearch()
     {
+        startNode.isWalkable = true;
+        destinationNode.isWalkable = true;
+
         frontier.Clear();
         reached.Clear();
 

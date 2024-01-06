@@ -5830,6 +5830,10 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 8113655209551747762, guid: 1c6adb99e0f03a7458399713aa4f29d5, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9434,6 +9438,10 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 8113655209551747762, guid: 1c6adb99e0f03a7458399713aa4f29d5, type: 3}
+      propertyPath: isPlaceable
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11532,7 +11540,7 @@ PrefabInstance:
       objectReference: {fileID: 2351013258762821523, guid: 8c2ebc88656b2f54fb5eb6bd4bdfe6c5, type: 3}
     - target: {fileID: 1351676393304686175, guid: f9c162345eef0e240a7ad156c3a1684c, type: 3}
       propertyPath: poolSize
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6718885445018630828, guid: f9c162345eef0e240a7ad156c3a1684c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11577,6 +11585,14 @@ PrefabInstance:
     - target: {fileID: 7293414074508625087, guid: f9c162345eef0e240a7ad156c3a1684c, type: 3}
       propertyPath: m_Name
       value: Object Pool
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846568592839080912, guid: f9c162345eef0e240a7ad156c3a1684c, type: 3}
+      propertyPath: destinationCoordinates.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7846568592839080912, guid: f9c162345eef0e240a7ad156c3a1684c, type: 3}
+      propertyPath: destinationCoordinates.y
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
