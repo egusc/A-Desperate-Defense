@@ -37,8 +37,14 @@ public class Tile : MonoBehaviour
         if(gridManager.GetNode(coordinates).isWalkable && !pathfinder.WillBlockPath(coordinates))
         {
             bool isPlaced = turret.CreateTower(turret, transform.position);
+            Debug.Log(isPlaced);
             isPlaceable = !isPlaced;
-            gridManager.BlockNode(coordinates);
+            
+            if(!isPlaceable)
+            {
+                gridManager.BlockNode(coordinates);
+            }
+            
         }   
     }
 }
