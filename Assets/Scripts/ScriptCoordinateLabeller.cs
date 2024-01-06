@@ -25,7 +25,7 @@ public class ScriptCoordinateLabeller : MonoBehaviour
         label = GetComponent<TextMeshPro>();    
         DisplayCurrentCoordinates();
         UpdateObjectName();
-        label.enabled = true;
+        label.enabled = false;
     }
 
     // Update is called once per frame
